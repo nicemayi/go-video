@@ -80,3 +80,5 @@ create table video_del_rec (
 	video_id varchar(64) not null,
 	primary key (video_id)
 );
+
+go test ./api/dbops -v
