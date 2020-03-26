@@ -82,3 +82,5 @@ create table video_del_rec (
 );
 
 go test ./api/dbops -v
+
+go build -o ./bin/api

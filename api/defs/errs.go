@@ -5,13 +5,13 @@ type Err struct {
 	ErrCode string `json:"error_code"`
 }
 
-type ErrorResponse struct {
+type ErrResponse struct {
 	HttpSC int
 	Error  Err
 }
 
 var (
-	ErrorRequestBodyParseFailed = ErrorResponse{
+	ErrorRequestBodyParseFailed = ErrResponse{
 		HttpSC: 400,
 		Error: Err{
 			Error:   "Request body is not correct",
@@ -19,11 +19,27 @@ var (
 		},
 	}
 
-	ErrorNotAuthUser = ErrorResponse{
+	ErrorNotAuthUser = ErrResponse{
 		HttpSC: 401,
 		Error: Err{
 			Error:   "User authentication failed.",
 			ErrCode: "002",
+		},
+	}
+
+	ErrorDBError = ErrResponse{
+		HttpSC: 500,
+		Error: Err{
+			Error:   "DB ops failed",
+			ErrCode: "003",
+		},
+	}
+
+	ErrorInternalFaults = ErrResponse{
+		HttpSC: 500,
+		Error: Err{
+			Error:   "Internal service error",
+			ErrCode: "004",
 		},
 	}
 )
