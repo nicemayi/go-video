@@ -84,3 +84,8 @@ create table video_del_rec (
 go test ./api/dbops -v
 
 go build -o ./bin/api
+
+如果要run main包里的文件，则需要全部都run！！
+go run api/main.go api/handlers.go api/response.go api/auth.go
+或者
+go run api/*.go
