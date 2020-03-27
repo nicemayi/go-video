@@ -89,3 +89,5 @@ go build -o ./bin/api
 go run api/main.go api/handlers.go api/response.go api/auth.go
 或者
 go run api/*.go
+
+视频播放长连接
